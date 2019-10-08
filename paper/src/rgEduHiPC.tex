@@ -1,0 +1,72 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+% \usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{refs.bib}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Dissonance Reduction Tooling for HPC Pedagogy
+	% \thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Rohit Goswami}
+	\IEEEauthorblockA{\textit{Department of Chemistry} \\
+		\textit{Indian Institute of Technology Kanpur}\\
+		Kanpur, India \\
+		rgoswami@iitk.ac.in}
+	\and
+	\IEEEauthorblockN{2\textsuperscript{nd} Sonaly Goswami}
+	\IEEEauthorblockA{\textit{Department of Chemistry} \\
+		\textit{Indian Institute of Technology Kanpur}\\
+		Kanpur, India \\
+		sonaly@iitk.ac.in}
+	\and
+	\IEEEauthorblockN{3\textsuperscript{rd} Pranay Baldev}
+	\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+		\textit{Indian Institute of Technology Kanpur}\\
+		Kanpur, India \\
+		bpranay@iitk.ac.in}
+	\and
+	\IEEEauthorblockN{4\textsuperscript{th} Shaivya Anand}
+	\IEEEauthorblockA{\textit{School of Environmental Science and Technology} \\
+		\textit{Indian Institute of Technology Kharagpur}\\
+		Kharagpur, India \\
+		shaivya.anand@iitkgp.ac.in}
+	\and
+	\IEEEauthorblockN{5\textsuperscript{th} Debabrata Goswami}
+	\IEEEauthorblockA{\textit{Department of Chemistry} \\
+		\textit{Indian Institute of Technology Kanpur}\\
+		Kanpur, India\\
+		dgoswami@iitk.ac.in}
+	% \and
+	% \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+	% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+	% 	\textit{name of organization (of Aff.)}\\
+	% 	City, Country \\
+	% 	email address}
+}
+
+\maketitle
+
+\begin{abstract}
+	We describe a general work-flow which scales intuitively to high-performance computing (HPC) clusters for different domains of scientific computation. We demonstrate our methodology with a radial distribution function calculation in three languages; FORTRAN, C++ and Python. We show that incorporating appropriate tooling, namely Git, CMake, TORQUE/SLURM, and nix-language expressions for packaging into the pedagogical practice allows for high-performance, platform-independent, reproducible scientific software. For domain specific algorithms, we show that there is a language-independent pedagogical methodology which may be leveraged to ensure best practices for the scientific HPC community with minimal cognitive dissonance for practitioners and students.
+\end{abstract}
+
+\begin{IEEEkeywords}
+	pedagogy, best-practices, tooling, methodology, reproducible-research
+\end{IEEEkeywords}
+
+\section{Introduction}
+\section{From Computing to High Performance Computing}
+\section{Local Perspective}
+% These self-contained systems are then iteratively refined towards optimal performance on HPC clusters.
+\printbibliography
+\end{document}
