@@ -454,3 +454,4 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 /code/data/liq-mW
+/code/output/
