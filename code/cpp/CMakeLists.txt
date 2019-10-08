@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(yodaChill)
 
 FIND_PACKAGE( Boost 1.55.0 REQUIRED COMPONENTS system filesystem )
-  find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+  # find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
 #Bring the headers, such as Student.h into the project
 include_directories(include)
@@ -29,4 +29,4 @@ set(SOURCES
 add_executable(runYoda ${SOURCES})
 
 
-TARGET_LINK_LIBRARIES( runYoda LINK_PUBLIC ${Boost_LIBRARIES} Eigen3::Eigen)
+TARGET_LINK_LIBRARIES( runYoda LINK_PUBLIC ${Boost_LIBRARIES})
