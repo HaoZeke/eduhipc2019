@@ -47,7 +47,7 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin,
           dist[k] = coord[iatom][k] - coord[jatom][k];
           // Apply PBCs
           dist[k] -= box[k] * round(dist[k] / box[k]);
-          r2 += dist[k];
+          r2 += pow(dist[k], 2);
         }
         r_ij = sqrt(r2);
         // r_ij = gen::periodicDist(coord, box, iatom, jatom);
