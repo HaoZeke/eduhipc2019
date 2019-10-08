@@ -181,6 +181,10 @@ int main() {
 
   dumpFile->close(); // Close the lammps file
 
+  // Normalize the RDF
+  switchVar = 2;
+  rdf::gr(rdf, &nframes, binsize, nbin, box, coord, cutoff, nop, switchVar);
+
   // -------------------------------------------- // Write out the RDF
 
   // -------------------------------------------- // Fin
