@@ -19,7 +19,8 @@ INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
 #Can manually add the sources using the set command as follows:
 set(SOURCES 
 	src/main.cpp
-  src/inputOutput.cpp 
+  src/inputOutput.cpp
+  src/rdf.cpp 
 	)
  
 #However, the file(GLOB...) allows for wildcard additions:
