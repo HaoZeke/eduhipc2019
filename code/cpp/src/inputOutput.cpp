@@ -56,3 +56,42 @@ int io::getTotalTimesteps(std::string filename, int *totalSteps)
   return 0;
 
 }
+
+/********************************************/ /**
+ *  Writes out a file containing the r and g(r) values
+ ***********************************************/
+int io::writeRDF(double *rdfArray, double binsize, int nbin, std::string filename){
+  std::ofstream outputFile;
+  double r; // Distance value
+  // ----------------
+  // Otherwise create file
+  // Create output dir if it doesn't exist already
+  const char* path = "../../output"; // relative to the build directory
+  boost::filesystem::path dir(path);
+  if(boost::filesystem::create_directory(dir))
+  {
+    std::cerr<< "Output directory created\n";
+  }
+  // ----------------
+  // Write output to file inside the output directory
+  outputFile.open("../../output/"+filename);
+
+  //  Comment line
+  // 0.1  3
+  // O.2  5 
+
+  // Write the comment line
+  // Write out the number of atoms
+  outputFile << "# r  g(r)\n";
+
+  // Write out the RDF values
+  // Loop through the bins
+  for(int ibin=0; ibin<nbin; ibin++){
+    r = binsize*(ibin+0.5); // Calculate the r value
+    // Write out the RDF
+    outputFile << r << " "<< rdfArray[ibin] <<"\n";
+  } // end of loop through all bins
+
+  // Once the rings have been printed, exit
+  return 0;
+}

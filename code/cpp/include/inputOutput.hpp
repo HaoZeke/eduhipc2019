@@ -12,6 +12,10 @@
 #include <memory>
 #include <iostream>
 
+// Boost
+#include "boost/filesystem/operations.hpp"
+#include "boost/filesystem/path.hpp"
+
 namespace io{
 
   // --------------------------------------------
@@ -47,6 +51,9 @@ namespace io{
 
   // Gets the total number of timesteps in a lammps trajectory file
   int getTotalTimesteps(std::string filename, int *totalSteps);
+
+  // Write out the RDF to an output file
+  int writeRDF(double *rdfArray, double binsize, int nbin, std::string filename="rdf.dat");
 
 }
 
