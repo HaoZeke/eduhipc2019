@@ -23,7 +23,7 @@ int main() {
   double cutoff = 12;                   // Cutoff for the RDF (should be less than half the box)
   // -------------------------------------------- // Variables
   int totalSteps = 0;                   // Starts from 1
-  std::vector<int> box;                 // Box lengths
+  std::vector<double> box;              // Box lengths
   int nop;                              // Total number of particles in the box
   int dim;                              // Number of dimensions
   // Vector of vectors containing the coordinates
@@ -55,7 +55,7 @@ int main() {
   double rdf[nbin]; // init
   // Initialize the RDF
   switchVar = 0;
-  rdf::gr(rdf, &nframes, binsize, nbin, coord, nop, switchVar);
+  rdf::gr(rdf, &nframes, binsize, nbin, box, coord, cutoff, nop, switchVar);
   // ----
 
   // Check to make sure that the user has entered valid  steps
@@ -169,7 +169,9 @@ int main() {
       // Do stuff if the coordinates have been filled
       // Process targetFrame
       if (fillCoord){
-        //
+        switchVar = 1;
+        // Accumulate the rdf
+        rdf::gr(rdf, &nframes, binsize, nbin, box, coord, cutoff, nop, switchVar);
       } // End of processing targetFrame
       // ---------------------------
     } // end of loop through calculation frames
