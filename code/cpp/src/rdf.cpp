@@ -1,7 +1,5 @@
 #include <rdf.hpp>
 
-#define _USE_MATH_DEFINES
-
 /********************************************/ /**
  *  Calculates the RDF
  If switchVar=0, initializes the RDF
@@ -17,6 +15,10 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin, std::vecto
   double rho;   // Number density 
   double boxVolume;  // Total box volume
   double nIdeal; // Number of ideal gas particles in the binVolume
+  double pi = 3.14159265; // Value of pi
+  //
+  double r2 = 0.0; // Squared distance
+  std::vector<double> dist; // Distance
 
   // -------------------------------------// Init
   if (switchVar==0){
@@ -36,8 +38,19 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin, std::vecto
     for (int iatom=0; iatom<nop-1; iatom++){
       // Loop through jatom
       for (int jatom=iatom+1; jatom<nop; jatom++){
+        // ---
         // Get the periodic distance r_ij
-        r_ij = gen::periodicDist(coord, box, iatom, jatom);
+        dist.resize( box.size() );
+        r2 = 0.0;
+        for (int k=0; k<box.size(); k++){
+          dist[k] = coord[iatom][k]-coord[jatom][k];
+          // Apply PBCs
+          dist[k] -= box[k] * round(dist[k] / box[k]);
+          r2 += dist[k];
+        }
+        r_ij = sqrt(r2);
+        // r_ij = gen::periodicDist(coord, box, iatom, jatom);
+        // ---
 
         // Only add if r_ij is within the cutoff
         if (r_ij < cutoff){
@@ -63,7 +76,7 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin, std::vecto
     // Normalize the RDF
     for (int ibin=0; ibin<nbin; ibin++){
       binVolume=( pow( (ibin+1),3.0 )-pow( (ibin),3.0 ) ) * pow( (binsize),3.0 );
-      nIdeal = (4./3.)*M_PI*binVolume*rho; // Number of ideal gas particles
+      nIdeal = (4./3.)*pi*binVolume*rho; // Number of ideal gas particles
       // Normalize
       rdfArray[ibin] = rdfArray[ibin]/( (*nframes)*nop*nIdeal ); 
     } // end of loop through all bins
