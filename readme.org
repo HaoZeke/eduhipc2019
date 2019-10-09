@@ -1,3 +1,0 @@
-* About
-A collaborative effort on teaching high-performance-computing techniques in a
-domain specific manner.
