@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Io module | yodaChill</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-light+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#cb4b16" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">yodaChill</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Io <span class="m-thin">module</span></h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespaceio.html" class="m-doc">io</a></dt>
+            <dd>Handles Input-Output Operations. This contains general functions for reading in and writing out files.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gac23f898d6ba0ed195d55a179c6802875" class="m-doc">file_exists</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga24faa8f4db332b6554c73acccf84e7b1" class="m-doc">tokenizer</a>(</span><span class="m-doc-wrap">std::string line) -&gt; std::vector&lt;std::string&gt;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga28c1b74bc35de0a759ee608b6bb102e3" class="m-doc">tokenizerDouble</a>(</span><span class="m-doc-wrap">std::string line) -&gt; std::vector&lt;double&gt;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga59fda0d8f0bfdb18178f9dceaa62d965" class="m-doc">getTotalTimesteps</a>(</span><span class="m-doc-wrap">std::string filename,
+              int* totalSteps) -&gt; int</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga705b422a5d098260f1999ded5489b2ce" class="m-doc">writeRDF</a>(</span><span class="m-doc-wrap">double* rdfArray,
+              double binsize,
+              int nbin,
+              std::string filename = &quot;rdf.dat&quot;) -&gt; int</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="gac23f898d6ba0ed195d55a179c6802875"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac23f898d6ba0ed195d55a179c6802875" class="m-doc-self">file_exists</a>(</span><span class="m-doc-wrap">const std::string&amp; name)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="inputOutput_8hpp.html">&lt;code/cpp/include/inputOutput.hpp&gt;</a></div>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The name of the file</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Function for checking if a file exists or not.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga24faa8f4db332b6554c73acccf84e7b1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::vector&lt;std::string&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga24faa8f4db332b6554c73acccf84e7b1" class="m-doc-self">tokenizer</a>(</span><span class="m-doc-wrap">std::string line)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="inputOutput_8hpp.html">&lt;code/cpp/include/inputOutput.hpp&gt;</a></div>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">line&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The string containing the line to be tokenized</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Function for tokenizing line strings into words (strings) delimited by whitespace. This returns a vector with the words in it.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga28c1b74bc35de0a759ee608b6bb102e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::vector&lt;double&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga28c1b74bc35de0a759ee608b6bb102e3" class="m-doc-self">tokenizerDouble</a>(</span><span class="m-doc-wrap">std::string line)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="inputOutput_8hpp.html">&lt;code/cpp/include/inputOutput.hpp&gt;</a></div>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">line&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The string containing the line to be tokenized</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Function for tokenizing line strings into a vector of doubles.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga59fda0d8f0bfdb18178f9dceaa62d965"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga59fda0d8f0bfdb18178f9dceaa62d965" class="m-doc-self">getTotalTimesteps</a>(</span><span class="m-doc-wrap">std::string filename,
+              int* totalSteps)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="inputOutput_8hpp.html">&lt;code/cpp/include/inputOutput.hpp&gt;</a></div>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The path of the LAMMPS trajectory file</td>
+                </tr>
+                <tr>
+                  <td>totalSteps&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Pointer to the total number of steps or frames in the trajectory</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>an int value of 0 (successful file opening) or 1 (error)</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Function for getting the total number of timesteps from a lammps trajectory. This also includes &#x27;incomplete&#x27; frames, so it should be used with caution.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga705b422a5d098260f1999ded5489b2ce"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga705b422a5d098260f1999ded5489b2ce" class="m-doc-self">writeRDF</a>(</span><span class="m-doc-wrap">double* rdfArray,
+              double binsize,
+              int nbin,
+              std::string filename = &quot;rdf.dat&quot;)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="inputOutput_8hpp.html">&lt;code/cpp/include/inputOutput.hpp&gt;</a></div>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rdfArray&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The array containing the calculated <svg class="m-math" style="width: 2.160em; height: 1.245em;" viewBox="0 -8.966376 20.739381 11.955168">
+<title>
+$g(r)$
+</title>
+<defs>
+<path id='eq1-g1-40' d='M3.88543 2.905106C3.88543 2.86924 3.88543 2.84533 3.682192 2.642092C2.486675 1.43462 1.817186 -0.537983 1.817186 -2.976837C1.817186 -5.296139 2.379078 -7.292653 3.765878 -8.703362C3.88543 -8.810959 3.88543 -8.834869 3.88543 -8.870735C3.88543 -8.942466 3.825654 -8.966376 3.777833 -8.966376C3.622416 -8.966376 2.642092 -8.105604 2.056289 -6.933998C1.446575 -5.726526 1.171606 -4.447323 1.171606 -2.976837C1.171606 -1.912827 1.338979 -0.490162 1.960648 0.789041C2.666002 2.223661 3.646326 3.000747 3.777833 3.000747C3.825654 3.000747 3.88543 2.976837 3.88543 2.905106Z'/>
+<path id='eq1-g1-41' d='M3.371357 -2.976837C3.371357 -3.88543 3.251806 -5.36787 2.582316 -6.75467C1.876961 -8.18929 0.896638 -8.966376 0.765131 -8.966376C0.71731 -8.966376 0.657534 -8.942466 0.657534 -8.870735C0.657534 -8.834869 0.657534 -8.810959 0.860772 -8.607721C2.056289 -7.400249 2.725778 -5.427646 2.725778 -2.988792C2.725778 -0.669489 2.163885 1.327024 0.777086 2.737733C0.657534 2.84533 0.657534 2.86924 0.657534 2.905106C0.657534 2.976837 0.71731 3.000747 0.765131 3.000747C0.920548 3.000747 1.900872 2.139975 2.486675 0.968369C3.096389 -0.251059 3.371357 -1.542217 3.371357 -2.976837Z'/>
+<path id='eq1-g0-103' d='M4.040847 -1.518306C3.993026 -1.327024 3.969116 -1.279203 3.813699 -1.099875C3.323537 -0.466252 2.82142 -0.239103 2.450809 -0.239103C2.056289 -0.239103 1.685679 -0.549938 1.685679 -1.374844C1.685679 -2.008468 2.044334 -3.347447 2.307347 -3.88543C2.654047 -4.554919 3.19203 -5.033126 3.694147 -5.033126C4.483188 -5.033126 4.638605 -4.052802 4.638605 -3.981071L4.60274 -3.813699L4.040847 -1.518306ZM4.782067 -4.483188C4.62665 -4.829888 4.291905 -5.272229 3.694147 -5.272229C2.391034 -5.272229 0.908593 -3.634371 0.908593 -1.853051C0.908593 -0.609714 1.661768 0 2.426899 0C3.060523 0 3.622416 -0.502117 3.837609 -0.74122L3.574595 0.334745C3.407223 0.992279 3.335492 1.291158 2.905106 1.709589C2.414944 2.199751 1.960648 2.199751 1.697634 2.199751C1.338979 2.199751 1.0401 2.175841 0.74122 2.080199C1.123786 1.972603 1.219427 1.637858 1.219427 1.506351C1.219427 1.315068 1.075965 1.123786 0.812951 1.123786C0.526027 1.123786 0.215193 1.362889 0.215193 1.75741C0.215193 2.247572 0.705355 2.438854 1.721544 2.438854C3.263761 2.438854 4.064757 1.446575 4.220174 0.800996L5.547198 -4.554919C5.583064 -4.698381 5.583064 -4.722291 5.583064 -4.746202C5.583064 -4.913574 5.451557 -5.045081 5.272229 -5.045081C4.985305 -5.045081 4.817933 -4.805978 4.782067 -4.483188Z'/>
+<path id='eq1-g0-114' d='M4.65056 -4.889664C4.27995 -4.817933 4.088667 -4.554919 4.088667 -4.291905C4.088667 -4.004981 4.315816 -3.90934 4.483188 -3.90934C4.817933 -3.90934 5.092902 -4.196264 5.092902 -4.554919C5.092902 -4.937484 4.722291 -5.272229 4.124533 -5.272229C3.646326 -5.272229 3.096389 -5.057036 2.594271 -4.327771C2.510585 -4.961395 2.032379 -5.272229 1.554172 -5.272229C1.08792 -5.272229 0.848817 -4.913574 0.705355 -4.65056C0.502117 -4.220174 0.32279 -3.502864 0.32279 -3.443088C0.32279 -3.395268 0.37061 -3.335492 0.454296 -3.335492C0.549938 -3.335492 0.561893 -3.347447 0.633624 -3.622416C0.812951 -4.339726 1.0401 -5.033126 1.518306 -5.033126C1.80523 -5.033126 1.888917 -4.829888 1.888917 -4.483188C1.888917 -4.220174 1.769365 -3.753923 1.685679 -3.383313L1.350934 -2.092154C1.303113 -1.865006 1.171606 -1.327024 1.111831 -1.111831C1.028144 -0.800996 0.896638 -0.239103 0.896638 -0.179328C0.896638 -0.011955 1.028144 0.119552 1.207472 0.119552C1.338979 0.119552 1.566127 0.035866 1.637858 -0.203238C1.673724 -0.298879 2.116065 -2.10411 2.187796 -2.379078C2.247572 -2.642092 2.319303 -2.893151 2.379078 -3.156164C2.426899 -3.323537 2.47472 -3.514819 2.510585 -3.670237C2.546451 -3.777833 2.86924 -4.363636 3.16812 -4.62665C3.311582 -4.758157 3.622416 -5.033126 4.112578 -5.033126C4.303861 -5.033126 4.495143 -4.99726 4.65056 -4.889664Z'/>
+</defs>
+<g id='eq1-page1'>
+<use x='0' y='0' xlink:href='#eq1-g0-103'/>
+<use x='6.034256' y='0' xlink:href='#eq1-g1-40'/>
+<use x='10.586582' y='0' xlink:href='#eq1-g0-114'/>
+<use x='16.187055' y='0' xlink:href='#eq1-g1-41'/>
+</g>
+</svg></td>
+                </tr>
+                <tr>
+                  <td>binsize&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The bin-width or bin size of each bin, which is user-defined</td>
+                </tr>
+                <tr>
+                  <td>nbin&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The total number of bins in the <svg class="m-math" style="width: 2.160em; height: 1.245em;" viewBox="0 -8.966376 20.739381 11.955168">
+<title>
+$g(r)$
+</title>
+<defs>
+<path id='eq2-g1-40' d='M3.88543 2.905106C3.88543 2.86924 3.88543 2.84533 3.682192 2.642092C2.486675 1.43462 1.817186 -0.537983 1.817186 -2.976837C1.817186 -5.296139 2.379078 -7.292653 3.765878 -8.703362C3.88543 -8.810959 3.88543 -8.834869 3.88543 -8.870735C3.88543 -8.942466 3.825654 -8.966376 3.777833 -8.966376C3.622416 -8.966376 2.642092 -8.105604 2.056289 -6.933998C1.446575 -5.726526 1.171606 -4.447323 1.171606 -2.976837C1.171606 -1.912827 1.338979 -0.490162 1.960648 0.789041C2.666002 2.223661 3.646326 3.000747 3.777833 3.000747C3.825654 3.000747 3.88543 2.976837 3.88543 2.905106Z'/>
+<path id='eq2-g1-41' d='M3.371357 -2.976837C3.371357 -3.88543 3.251806 -5.36787 2.582316 -6.75467C1.876961 -8.18929 0.896638 -8.966376 0.765131 -8.966376C0.71731 -8.966376 0.657534 -8.942466 0.657534 -8.870735C0.657534 -8.834869 0.657534 -8.810959 0.860772 -8.607721C2.056289 -7.400249 2.725778 -5.427646 2.725778 -2.988792C2.725778 -0.669489 2.163885 1.327024 0.777086 2.737733C0.657534 2.84533 0.657534 2.86924 0.657534 2.905106C0.657534 2.976837 0.71731 3.000747 0.765131 3.000747C0.920548 3.000747 1.900872 2.139975 2.486675 0.968369C3.096389 -0.251059 3.371357 -1.542217 3.371357 -2.976837Z'/>
+<path id='eq2-g0-103' d='M4.040847 -1.518306C3.993026 -1.327024 3.969116 -1.279203 3.813699 -1.099875C3.323537 -0.466252 2.82142 -0.239103 2.450809 -0.239103C2.056289 -0.239103 1.685679 -0.549938 1.685679 -1.374844C1.685679 -2.008468 2.044334 -3.347447 2.307347 -3.88543C2.654047 -4.554919 3.19203 -5.033126 3.694147 -5.033126C4.483188 -5.033126 4.638605 -4.052802 4.638605 -3.981071L4.60274 -3.813699L4.040847 -1.518306ZM4.782067 -4.483188C4.62665 -4.829888 4.291905 -5.272229 3.694147 -5.272229C2.391034 -5.272229 0.908593 -3.634371 0.908593 -1.853051C0.908593 -0.609714 1.661768 0 2.426899 0C3.060523 0 3.622416 -0.502117 3.837609 -0.74122L3.574595 0.334745C3.407223 0.992279 3.335492 1.291158 2.905106 1.709589C2.414944 2.199751 1.960648 2.199751 1.697634 2.199751C1.338979 2.199751 1.0401 2.175841 0.74122 2.080199C1.123786 1.972603 1.219427 1.637858 1.219427 1.506351C1.219427 1.315068 1.075965 1.123786 0.812951 1.123786C0.526027 1.123786 0.215193 1.362889 0.215193 1.75741C0.215193 2.247572 0.705355 2.438854 1.721544 2.438854C3.263761 2.438854 4.064757 1.446575 4.220174 0.800996L5.547198 -4.554919C5.583064 -4.698381 5.583064 -4.722291 5.583064 -4.746202C5.583064 -4.913574 5.451557 -5.045081 5.272229 -5.045081C4.985305 -5.045081 4.817933 -4.805978 4.782067 -4.483188Z'/>
+<path id='eq2-g0-114' d='M4.65056 -4.889664C4.27995 -4.817933 4.088667 -4.554919 4.088667 -4.291905C4.088667 -4.004981 4.315816 -3.90934 4.483188 -3.90934C4.817933 -3.90934 5.092902 -4.196264 5.092902 -4.554919C5.092902 -4.937484 4.722291 -5.272229 4.124533 -5.272229C3.646326 -5.272229 3.096389 -5.057036 2.594271 -4.327771C2.510585 -4.961395 2.032379 -5.272229 1.554172 -5.272229C1.08792 -5.272229 0.848817 -4.913574 0.705355 -4.65056C0.502117 -4.220174 0.32279 -3.502864 0.32279 -3.443088C0.32279 -3.395268 0.37061 -3.335492 0.454296 -3.335492C0.549938 -3.335492 0.561893 -3.347447 0.633624 -3.622416C0.812951 -4.339726 1.0401 -5.033126 1.518306 -5.033126C1.80523 -5.033126 1.888917 -4.829888 1.888917 -4.483188C1.888917 -4.220174 1.769365 -3.753923 1.685679 -3.383313L1.350934 -2.092154C1.303113 -1.865006 1.171606 -1.327024 1.111831 -1.111831C1.028144 -0.800996 0.896638 -0.239103 0.896638 -0.179328C0.896638 -0.011955 1.028144 0.119552 1.207472 0.119552C1.338979 0.119552 1.566127 0.035866 1.637858 -0.203238C1.673724 -0.298879 2.116065 -2.10411 2.187796 -2.379078C2.247572 -2.642092 2.319303 -2.893151 2.379078 -3.156164C2.426899 -3.323537 2.47472 -3.514819 2.510585 -3.670237C2.546451 -3.777833 2.86924 -4.363636 3.16812 -4.62665C3.311582 -4.758157 3.622416 -5.033126 4.112578 -5.033126C4.303861 -5.033126 4.495143 -4.99726 4.65056 -4.889664Z'/>
+</defs>
+<g id='eq2-page1'>
+<use x='0' y='0' xlink:href='#eq2-g0-103'/>
+<use x='6.034256' y='0' xlink:href='#eq2-g1-40'/>
+<use x='10.586582' y='0' xlink:href='#eq2-g0-114'/>
+<use x='16.187055' y='0' xlink:href='#eq2-g1-41'/>
+</g>
+</svg> histogram</td>
+                </tr>
+                <tr>
+                  <td>filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>(Optional argument) Specifies a user-defined file output name, which will be saved inside a directory called &#x27;output&#x27; in the top-level directory of the code folder.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>an int value of 0 (success) or 1 (error)</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Writes out a file containing the r and g(r) values</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <b>(C)
+2019-present</b>
+<a
+href="https://github.com/HaoZeke">Rohit
+Goswami</a>,
+<a
+href="https://github.com/amritagos">Amrita
+Goswami</a>,
+<a
+href="https://github.com/dgFemtoLab">FemtoLab
+team</a>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
