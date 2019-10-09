@@ -1,0 +1,30 @@
+# Customized Options
+# Make changes here to prevent things from being overwritten when the main file
+# is updated
+# Defaults
+@INCLUDE                = Doxyfile
+# For m.css
+GENERATE_HTML           = NO
+GENERATE_XML            = YES
+XML_PROGRAMLISTING      = NO
+# Project Settings
+PROJECT_NAME            = "yodaChill"
+# PROJECT_BRIEF           = "Deferred Structural Elucidation Analysis for Molecular Simulations"
+# PROJECT_LOGO            = "images/Logo.png"
+# M_FAVICON               = "images/Logo.ico"
+M_PAGE_FINE_PRINT	    = <b>(C) 2019-present</b> <a href="https://github.com/HaoZeke">Rohit Goswami</a>, <a href="https://github.com/amritagos">Amrita Goswami</a>, <a href="https://github.com/dgFemtoLab">FemtoLab team</a>
+
+# Doxygen Settings
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+INPUT = README.md ./code/cpp/
+# EXCLUDE = ./src/include/external
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Language additions
+OPTIMIZE_OUTPUT_FOR_C = YES
+BUILTIN_STL_SUPPORT = YES
+
+##! M_LINKS_NAVBAR1     = namespaces modules
+##! M_LINKS_NAVBAR2     = annotated
+# ditched files in navbar2 and pages in navbar1 for now
