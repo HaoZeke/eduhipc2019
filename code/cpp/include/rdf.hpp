@@ -50,9 +50,9 @@ namespace rdf {
 
 // Calculates the RDF for a bulk volume with particles of a single type only
 int gr(double *rdfArray, int *nframes, double binsize, int nbin,
-       std::vector<double> box, std::vector<std::vector<double> > coord,
+       std::vector<double> box, std::vector<std::vector<double>> coord,
        double cutoff, int nop, int switchVar);
 
-}  // namespace rdf
+} // namespace rdf
 
-#endif  //
+#endif //
