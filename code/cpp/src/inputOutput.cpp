@@ -74,7 +74,7 @@ int io::writeRDF(double *rdfArray, double binsize, int nbin, std::string filenam
   }
   // ----------------
   // Write output to file inside the output directory
-  outputFile.open("../../output"+filename);
+  outputFile.open("../../output/"+filename);
 
   //  Comment line
   // 0.1  3
