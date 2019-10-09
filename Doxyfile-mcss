@@ -21,9 +21,9 @@ M_PAGE_FINE_PRINT	    = <b>(C) 2019-present</b> <a href="https://github.com/HaoZ
 # Doxygen Settings
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
-INPUT = README.md ./code/cpp/
+INPUT = projIndex.md ./code/cpp/
 # EXCLUDE = ./src/include/external
-USE_MDFILE_AS_MAINPAGE = README.md
+USE_MDFILE_AS_MAINPAGE = projIndex.md
 
 # Language additions
 OPTIMIZE_OUTPUT_FOR_C = YES
