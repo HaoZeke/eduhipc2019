@@ -17,7 +17,7 @@ int main() {
   int numCalcSteps = 1;              // Number of steps for which to do the calculation 1000
   int stepGap = 1;                      // Gap between steps
   // Make equiliSteps one if you don't want to skip anything
-  int equiliSteps = 50;                 // Number of steps to skip (last frame exclusive)
+  int equiliSteps = 1;                 // Number of steps to skip (last frame exclusive)
   // RDF
   double binsize = 0.01;                // In Angstroms
   double cutoff = 12;                   // Cutoff for the RDF (should be less than half the box)
@@ -181,11 +181,14 @@ int main() {
 
   dumpFile->close(); // Close the lammps file
 
-  // Normalize the RDF
+  // // Normalize the RDF
   switchVar = 2;
   rdf::gr(rdf, &nframes, binsize, nbin, box, coord, cutoff, nop, switchVar);
 
-  // -------------------------------------------- // Write out the RDF
+  // // -------------------------------------------- // Write out the RDF
+
+  // For non-default filename, add one after nbin
+  io::writeRDF(rdf, binsize, nbin);
 
   // -------------------------------------------- // Fin
 
