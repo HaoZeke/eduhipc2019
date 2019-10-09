@@ -3,7 +3,7 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 % \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
+\usepackage[]{algorithm2e}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
@@ -58,7 +58,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \maketitle
 
 \begin{abstract}
-	We describe a general work-flow which scales intuitively to high-performance computing (HPC) clusters for different domains of scientific computation. We demonstrate our methodology with a radial distribution function calculation in C++, with mental models for FORTRAN and Python as well. We present a pedagogical framework for the development of guided concrete incremental techniques to incorporate domain specific knowledge and transfer existing expertise for developing high-performance, platform-independent, reproducible scientific software. This is effected by presenting the acceleration of a radial distribution function, a common algorithm in computational chemistry. Thus we assert that for domain specific algorithms, there is a language-independent pedagogical methodology which may be leveraged to ensure best practices for the scientific HPC community with minimal cognitive dissonance for practitioners and students.
+	We describe a general work-flow which scales intuitively to high-performance computing (HPC) clusters for different domains of scientific computation. We demonstrate our methodology with a radial distribution function calculation in C++, with mental models for FORTRAN and Python as well. We present a pedagogical framework for the development of guided concrete incremental techniques to incorporate domain specific knowledge and transfer existing expertise for developing high-performance, platform-independent, reproducible scientific software. This is effected by presenting the acceleration of a radial distribution function, a well known algorithm in computational chemistry. Thus we assert that for domain specific algorithms, there is a language-independent pedagogical methodology which may be leveraged to ensure best practices for the scientific HPC community with minimal cognitive dissonance for practitioners and students.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -67,8 +67,61 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \section{Introduction}
 High performance scalable computing techniques have permeated all fields of science, engineering and technology. Digital literacy has gained traction as an invaluable tool for scientific reproducible research, with basic tools being more than adequately covered by initiatives such as the Carpentries \cite{wilsonSoftwareCarpentryGetting2006a,tealDataCarpentryWorkshops2015} workshops and certifications. In addition to the renewed focus on digital tools and their use, the community has also recognized the necessity of well developed code for research \cite{gobleBetterSoftwareBetter2014}. However, even as open workflows have been recognized by the life sciences \cite{prlicTenSimpleRules2012,altschulAnatomySuccessfulComputational2013}, high performance tools have not been addressed in terms of their unique pedagogical issues. Given that distributed computing in general is considered to be a complex topic, it is natural that students unused to computational techniques, comfortable in their own scientific domains would not be able to leverage the appropriate compute, as it has been reported that the view of a novice and an expert per domain will differ \cite{chiNatureExpertise1988}. Herein we present an overview of contemporary HPC education, and develop a methodology to incorporate best practices while facilitating familiarity by suitable generalizations and variations \cite{catramboneGeneralizingSolutionProceduresa,braithwaiteEffectsVariationPrior2015}. We have taken the domain specific example of a standard analysis code for the calculation of the radial distribution function in three dimensions \cite{frenkelUnderstandingMolecularSimulation2001}. We enumerate the nature of the algorithm in pseudo-code, as the equivalent steps in both performance oriented C++, FORTRAN, and a ``simpler'' high level language (python) to show how each may be linked to domain specific representations. Furthermore we then show the natural extension of the mental model developed for C++ to encompass concepts for the parallelism on distributed systems and thus present an optimal pedagogical perspective for guided practice \cite{ericssonRoleDeliberatePractice} of high performance computing.
-\section{From Computing to High Performance Computing}
-\section{Local Perspective}
+\section{Implementation and Models}
+That coherent group activities enhance the understanding and nature of scientific endeavors has been long understood in the pedagogical literature \cite{weirSmallChangesBig2019,bransfordHowPeopleLearn2000}. In keeping with the same principles, we have made the source code available on Github for collaborative development, and to ensure reproducible workflows we implement a Zenodo archive with versioning where the data-sets and history of the code may be tracked by mile-stoning. We have used a striped down set of software development best-practices from life sciences and physical sciences \cite{crouchSoftwareSustainabilityInstitute2013,altschulAnatomySuccessfulComputational2013,goswamiDSEAMSDeferredStructural2019,goswamiSpaceFillingCurves2019} suitable for novices, which may be described below with an optimal progression of topics:
+\begin{enumerate}
+	\item \textbf{Historical Logging} This is established by version control at a granular scale, and by the Zenodo archive at a coarse-grained, software-level perspective.
+	\item \textbf{Style Consistency} Software linters and code commit guidelines are a crucial part of scalable computing, and we have found for pedagogical purposes, it is sufficient to introduce them as part of the git collaborative guidelines. The principles of guided practice are found to be at odds with the varying levels of comfort learners have while approaching a project to be re-worked for distributed execution, so
+	\item \textbf{Reliability} The build process, consisting of a CMake modular system to maintain homogeneity across machines is also amenable to stricter dependency management via reproducible cryptographic hashes of the nix packaging system \cite{dolstraNixSafePolicyFree2004}.
+	\item \textbf{Documentation} Incorporating a suitable self generating documentation tool like Doxygen or Sphinx allows students to couple the code concepts to the underlying science in an efficient manner.
+\end{enumerate}
+Once serial code has been developed as per the guidelines above, we then assert the following generic progression and tooling for distributed, high performance execution:
+\begin{enumerate}
+	\item \textbf{Algorithm Analysis} With the
+	\item \textbf{Memory Management} Identifying
+	\item \textbf{Code Refactor} Once the previous optimizations have been completed, it is possible for advance data structure changes to be implemented with a focus on scalable performance, like the transference of data as space filling curves \cite{goswamiSpaceFillingCurves2019}, however, this is typically too advanced for most domain specific practitioners
+\end{enumerate}
+Similar to the principles of the carpentries \cite{wilsonSoftwareCarpentryGetting2006a}, the pedagogical concepts described will not typically allow for exponential performance gains for generic scientific software, however, given the proliferation of frameworks like OpenACC \cite{farberParallelProgrammingOpenACC2016}, it is reasonable to assume this is the intended goal for most teachers.
+\section{Radial Distribution Function}
+The radial distribution function (RDF) $g(r)$, or the first order pair correlation function is an appropriate starting point to generate a domain specific language for high performance computation, as it defined in the form of a deviation function. That is, it is the ratio of the average number density from a given atom to that of the average number density of an ideal gas of the same density \cite{frenkelUnderstandingMolecularSimulation2001}. The algorithm is amenable to distribution in theory, however, in practice the size of the underlying data-set is often a limiting factor without special considerations. The pseudocode for the algorithm is given in Algo. \ref{code:Pseudo}.
+\begin{algorithm}
+	\KwData{Molecular Dynamics Trajectory}
+	\KwResult{$g(r)$ v/s $r$ in a plain-text file}
+	initialization\;
+	\If{Initialization}{
+		\tcc{Calculate the bin size}
+		numFrames=0\tcc*{Frames processed}
+		numBins= (cutoff/binSize)+1\;
+		\tcc{Initialize rdf array to zero}
+		\ForEach(from 0 to numBins){element}{element=0}
+	}
+	% \eIf{Sampling}{
+	% 	numFrames=numFrames+1\;
+	% 	\For{iatom=1 to numberOfParticles-1}{
+	% 		\tcc{Looping over pairs of iatom and jatom}
+	% 		\For{jatom=1+iatom to numberOfParticles}{
+	% 			sat
+	% 		}
+	% 	}
+	% }
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
+	\caption{Pseudo code implementation of the RDF}
+	\label{code:Pseudo}
+\end{algorithm}
+We have considered a ``water box'' containing $4096$ water molecules with inter-particle interactions defined by the mW force-field \cite{molineroWaterModeledIntermediate2009}.
+
+\section{Reassigning Language}
+Without any loss of generality, we demonstrate the development of concepts of high performance computing in linguistic terms amenable to the molecular dynamics community. The overall structure of the algorithm
+\section{Conclusions}
 % These self-contained systems are then iteratively refined towards optimal performance on HPC clusters.
+We are able to show by example, a methodology which enables domain specific scientists and programming novices to prepare their code in a manner suited for distributed execution. We assert that a modest understanding of the core concepts of HPC computing is sufficient for performance enhancements for existing software, and have used the principles of guided practice and incremental sub-goal completion for the same. We demonstrate how modern tools are able to bring together concepts of science and HPC computing with minimal dissonance. We utilize the methodology and pedagogical tooling described for the specific case of molecular dynamics radial distribution function acceleration. It is expected that this work be followed by statistical studies formally affirming the results of our experiences and will also facilitate the development of better, performant, reproducible scientific workflows.
 \printbibliography
 \end{document}
