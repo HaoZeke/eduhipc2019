@@ -34,8 +34,14 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin,
   // -------------------------------------// Accumulation
   else if (switchVar == 1) {
     *nframes = *nframes + 1; // Add to the number of accumulated frames
-
-    // Loop over all pairs of atoms
+    double somethinBig[nop][3];
+    for (int i = 0; i < nop; i++) {
+      for (int j = 0; j < 3; j++) {
+        somethinBig[i][j] = coord[i][j];
+      }
+    }
+#pragma acc kernels
+    //  Loop over all pairs of atoms
     for (int iatom = 0; iatom < nop - 1; iatom++) {
       // Loop through jatom
       for (int jatom = iatom + 1; jatom < nop; jatom++) {
@@ -44,13 +50,13 @@ int rdf::gr(double *rdfArray, int *nframes, double binsize, int nbin,
         dist.resize(box.size());
         r2 = 0.0;
         for (int k = 0; k < box.size(); k++) {
-          dist[k] = coord[iatom][k] - coord[jatom][k];
+          dist[k] = somethinBig[iatom][k] - somethinBig[jatom][k];
           // Apply PBCs
           dist[k] -= box[k] * round(dist[k] / box[k]);
           r2 += pow(dist[k], 2);
         }
         r_ij = sqrt(r2);
-        // r_ij = gen::periodicDist(coord, box, iatom, jatom);
+        // r_ij = gen::periodicDist(somethinBig, box, iatom, jatom);
         // ---
 
         // Only add if r_ij is within the cutoff
