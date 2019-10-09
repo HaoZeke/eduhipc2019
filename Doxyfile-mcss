@@ -7,6 +7,10 @@
 GENERATE_HTML           = NO
 GENERATE_XML            = YES
 XML_PROGRAMLISTING      = NO
+HTML_EXTRA_STYLESHEET = \
+    https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i%7CSource+Code+Pro:400,400i,600 \
+    ../css/m-light+documentation.compiled.css
+M_THEME_COLOR = #cb4b16
 # Project Settings
 PROJECT_NAME            = "yodaChill"
 # PROJECT_BRIEF           = "Deferred Structural Elucidation Analysis for Molecular Simulations"
