@@ -457,3 +457,4 @@ _deps
 /code/output/
 m.css/
 docs/
+*.pdf
